@@ -21,6 +21,10 @@
                                 <rect key="frame" x="252" y="382" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="i4B-qy-Jkb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="w5a-YP-4au"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="th.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Mp6-ta-ies">
                                 <rect key="frame" x="186" y="128" width="240" height="128"/>
@@ -35,12 +39,16 @@
                                 <rect key="frame" x="276" y="488" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
+                                    <action selector="SubmitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qaA-wW-zkK"/>
                                     <segue destination="r7m-rU-YkY" kind="show" id="F9a-05-BGj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="Answer" destination="xk4-FV-See" id="pUH-kR-NZh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
