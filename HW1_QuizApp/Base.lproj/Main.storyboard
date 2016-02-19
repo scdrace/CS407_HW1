@@ -6,6 +6,30 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="SYf-Ac-7Y8">
+            <objects>
+                <viewController id="uYU-3U-jKd" customClass="P2ViewController" customModule="HW1_QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ggk-Bm-WrU"/>
+                        <viewControllerLayoutGuide type="bottom" id="rPz-hi-0Yf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mCX-gg-tVZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2m-dR-XBA">
+                                <rect key="frame" x="277" y="417" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpb-PF-D5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="-803"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HW1_QuizApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +64,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="SubmitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qaA-wW-zkK"/>
-                                    <segue destination="r7m-rU-YkY" kind="show" id="F9a-05-BGj"/>
+                                    <segue destination="r7m-rU-YkY" kind="show" id="QUp-ZQ-TxR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,12 +76,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="370"/>
+            <point key="canvasLocation" x="263" y="234"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u6V-2J-CvD">
             <objects>
-                <viewController id="r7m-rU-YkY" sceneMemberID="viewController">
+                <viewController id="r7m-rU-YkY" customClass="P2ViewController" customModule="HW1_QuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ovv-vx-bdU"/>
                         <viewControllerLayoutGuide type="bottom" id="Uo0-PL-J7n"/>
@@ -83,14 +107,20 @@
                                 <rect key="frame" x="220" y="358" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="r7m-rU-YkY" id="Juq-mp-GaJ"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="answer" destination="i4F-RD-NOj" id="qZH-mt-SgG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeY-4b-daf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="-28"/>
+            <point key="canvasLocation" x="1432" y="-24"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SDm-CQ-rh8">
@@ -120,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yZ-MU-37c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="946"/>
+            <point key="canvasLocation" x="1515" y="1090"/>
         </scene>
     </scenes>
     <resources>

@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var Answer: UITextField!
     let question = "What city does this team represent?"
+    let correctAnswer = "2"
+    var userAnswer = "2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +32,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        //textField.text
+        if let text = textField.text {
+            print(text)
+        }
         self.view.endEditing(true)
-        print("Hello")
         return true;
     }
+    
     @IBAction func SubmitAnswer(sender: AnyObject) {
+        if userAnswer == "2" {
+            print("hello2")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let nextController = segue.destinationViewController as! P2ViewController
+        nextController.item = 2
         
     }
 
