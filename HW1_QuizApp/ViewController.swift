@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var Answer: UITextField!
-    let question = "What city does this team represent?"
-    let correctAnswer = "2"
-    var userAnswer = "2"
+    let correctAnswer = ["3", "three"]
+    var userAnswer = ""
+    var questionCount = 0.0
+    var correctCount = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,31 +28,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-
-    @IBAction func dismissKeyboard(sender: AnyObject) {
-        //Answer.resignFirstResponder()
-    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        //textField.text
+        
         if let text = textField.text {
-            print(text)
+            if correctAnswer.contains(text.lowercaseString) {
+                answerLabel.text = "Correct!"
+                answerLabel.hidden = false
+                
+                correctCount += 1
+            }
+            else {
+                answerLabel.text = "Incorrect: Answer is 3"
+                answerLabel.hidden = false
+            }
         }
+        
         self.view.endEditing(true)
         return true;
     }
     
     @IBAction func SubmitAnswer(sender: AnyObject) {
-        if userAnswer == "2" {
-            print("hello2")
-        }
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let nextController = segue.destinationViewController as! P2ViewController
-        nextController.item = 2
-        
+        nextController.correctCount = correctCount
+        nextController.questionCount = questionCount + 1
+        answerLabel.hidden = true
+        Answer.text = ""
     }
 
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
+        
+    }
 }
 
